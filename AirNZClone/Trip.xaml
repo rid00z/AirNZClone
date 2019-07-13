@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AirNZClone.Trip">
+    <ContentView.Content>
+        <StackLayout>
+            <ContentView HeightRequest="400">
+                <Image WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center" Source="{Binding CityImage}" />
+            </ContentView>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="NZ29" ></Label>
+                <StackLayout>
+                    <Label Text="Departs Awesome"></Label>
+                    <Label Text="9:20pm"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Arrives"></Label>
+                    <Label Text="9:20pm"></Label>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="View boarding pass" />
+            <Button Text="Checked in" />
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Estimated Boarding"></Label>
+                    <Label Text="Boarding now"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Terminal"></Label>
+                    <Label Text="D"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Gate"></Label>
+                    <Label Text="-"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Seat"></Label>
+                    <Label Text="03B"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
