@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using MR.Gestures;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AirNZClone
 {
@@ -40,9 +42,10 @@ namespace AirNZClone
     {
         public Trip Trip { get; set; }
         public double Offset { get; set; }
+        public Xamarin.Forms.View TripBackgroundImage { get; set; }
     }
 
-    public partial class MyTrips : ContentPage
+    public partial class MyTrips : Xamarin.Forms.ContentPage
     {
         List<TripOffset> _trips;
         TripOffset _currentTrip;
@@ -50,96 +53,127 @@ namespace AirNZClone
         public MyTrips()
         {
             InitializeComponent();
-            //BindingContext = new MyTripsViewModel();
+            view2.BindingContext = new TripViewModel { CityImage = "housten.jpeg" };
+            view1.BindingContext = new TripViewModel { CityImage = "auckland.jpg" };
+            view3.BindingContext = new TripViewModel { CityImage = "sydney.jpg" };
+            bgImage0.Source = "auckland.jpg";
+            bgImage2.Source = "housten.jpeg";
+            bgImage3.Source = "sydney.jpg"; 
         }
 
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
 
+            //Set all defaults for Trip views
             _trips = new List<TripOffset>()
             {
-                new TripOffset { Trip = view1, Offset = 0 },
-                new TripOffset { Trip = view2, Offset = width },
-                new TripOffset { Trip = view3, Offset = width * 2 }
-            };
+                new TripOffset { Trip = view1, TripBackgroundImage = view0Image, Offset = 0 },
+                new TripOffset { Trip = view2, TripBackgroundImage = view2Image, Offset = width },
+                new TripOffset { Trip = view3, TripBackgroundImage = view3Image, Offset = width * 2 }
+            };            
             _currentTrip = _trips[0];
-            view1.TranslationX = 0;
-            view2.TranslationX = width;
-            view3.TranslationX = width * 2;
-
-            view1.BindingContext = new TripViewModel { CityImage = "auckland.jpg" };
-            view2.BindingContext = new TripViewModel { CityImage = "housten.jpeg" };
-            view3.BindingContext = new TripViewModel { CityImage = "sydney.jpg" };
+            view1.CalculateOffsets(0, width, 0, false);
+            bgImage0.Opacity = 1;
+            view2.CalculateOffsets(width, width, width, false);
+            bgImage2.Opacity = 1;
+            view3.CalculateOffsets(width * 2, width, width * 2, false);
+            bgImage3.Opacity = 1;
         }
 
         double _lastX;
-        public void PanUpdated(object sender, PanUpdatedEventArgs args)
+        int counter = 0;
+        bool disabled = false;
+
+        public void PanUpdatedMR(object sender, PanEventArgs panEventArgs)
         {
+            if (disabled) //If were vertical scrolling then ignore pan
+                return;
+
+            //Calculate percentage of pan and then set opacity on overlayt
+            var percentage = Math.Abs(panEventArgs.TotalDistance.X / this.Width);
+            whiteoverlay.Opacity = (percentage + .4).Clamp(.5, .9);
+
+            counter++;
+            if (counter == 3)
+            {
+                var totalDis = panEventArgs.TotalDistance;
+                var isVertical = Math.Abs(totalDis.Y) > Math.Abs(totalDis.X);
+                Debug.Write($"{isVertical}");
+                if (isVertical)
+                    disabled = true;
+                else
+                    scrollingContainer.IsEnabled = false;
+            }
+
+            _lastX = panEventArgs.TotalDistance.X;
+            foreach (var trip in _trips)
+            {
+                trip.Trip.CalculateOffsets(trip.Offset + panEventArgs.TotalDistance.X, scrollingContainer.Width, trip.Offset, false);
+            }
+        }
+
+        public void PanCompleted(object sender, PanEventArgs panEventArgs)
+        {
+            whiteoverlay.Opacity = .5; 
+
+            scrollingContainer.IsEnabled = true;
+            disabled = false;
+            counter = 0;
+
+            if (panEventArgs.Cancelled)
+            {
+                foreach (var trip in _trips)
+                {
+                    trip.Trip.CalculateOffsets(trip.Offset, scrollingContainer.Width, trip.Offset, false);
+                }
+            }
+
             var container = sender as View;
 
-            if (args.StatusType == GestureStatus.Running
-                || args.StatusType == GestureStatus.Started)
+            var snapFromDistance = (Math.Abs(_lastX) + 20) > (container.Width / 2);
+            var snapFromSpeed = Math.Abs(panEventArgs.Velocity.X) > 800;
+
+            if (snapFromSpeed || snapFromDistance)
             {
-                _lastX = args.TotalX;
-                foreach (var trip in _trips)
+                if (_lastX > 0) //show the one to the left
                 {
-                    trip.Trip.TranslationX = trip.Offset + args.TotalX;
-                }
-            }
-            else if (args.StatusType == GestureStatus.Completed)
-            {                
-                Debug.WriteLine($"Completed {container.Width} {_lastX} {_currentTrip.Trip.TranslationX}");
-                if ((Math.Abs(_lastX)+20) > (container.Width / 2))
-                {
-                    Debug.WriteLine($"Snap");
-                    if (_lastX > 0) //show the one to the left
+                    if (_trips[0] != _currentTrip)
                     {
-                        if (_trips[0] != _currentTrip)
+                        foreach (var trip in _trips)
                         {
-                            foreach (var trip in _trips)
-                            {
-                                trip.Offset = trip.Offset + container.Width;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (_trips[_trips.Count-1] != _currentTrip)
-                        {
-                            foreach (var trip in _trips)
-                            {
-                                trip.Offset = trip.Offset - container.Width;
-                            }
+                            trip.Offset = trip.Offset + container.Width;
                         }
                     }
                 }
-                 
-                foreach (var trip in _trips)
+                else
                 {
-                    if (trip.Offset == 0)
-                        _currentTrip = trip;
-                    trip.Trip.TranslateTo(trip.Offset, 0, 250, Easing.SinOut);
+                    if (_trips[_trips.Count - 1] != _currentTrip)
+                    {
+                        foreach (var trip in _trips)
+                        {
+                            trip.Offset = trip.Offset - container.Width;
+                        }
+                    }
                 }
             }
-            else if (args.StatusType == GestureStatus.Canceled)
+
+            //Go through the trips and move into default positions. 
+            foreach (var trip in _trips)
             {
-                foreach (var trip in _trips)
+                if (trip.Offset == 0)
                 {
-                    trip.Trip.TranslationX = trip.Offset;
+                    _currentTrip = trip;
+                    trip.TripBackgroundImage.Opacity = 1;
                 }
+                else
+                {
+                    trip.TripBackgroundImage.Opacity = 0;
+                }
+
+                trip.Trip.CalculateOffsets(trip.Offset, scrollingContainer.Width, trip.Offset, true);
             }
         }
-
-        public void Swiped(object sender, SwipedEventArgs args)
-        {
-            Debug.Write($"Swiped {args.Direction}");
-        }
-
-        //public void Scrolled(object sender, ScrolledEventArgs args)
-        //{
-        //    Debug.WriteLine($"Scrolled {args.ScrollX} {args.ScrollY} ");
-        //}
 
     }
 }

@@ -1251,6 +1251,7 @@ namespace AirNZClone.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::AirNZClone.Droid.Resource.Id.fill_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::AirNZClone.Droid.Resource.Id.fill_vertical;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.filled = global::AirNZClone.Droid.Resource.Id.filled;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::AirNZClone.Droid.Resource.Id.@fixed;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::AirNZClone.Droid.Resource.Id.flyoutcontent_appbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::AirNZClone.Droid.Resource.Id.flyoutcontent_recycler;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::AirNZClone.Droid.Resource.Id.forever;
@@ -2018,6 +2019,7 @@ namespace AirNZClone.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::AirNZClone.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar = global::AirNZClone.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Support_CoordinatorLayout = global::AirNZClone.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.collectionViewStyle = global::AirNZClone.Droid.Resource.Style.collectionViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar = global::AirNZClone.Droid.Resource.Styleable.ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_background = global::AirNZClone.Droid.Resource.Styleable.ActionBar_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundSplit = global::AirNZClone.Droid.Resource.Styleable.ActionBar_backgroundSplit;
@@ -6456,9 +6458,6 @@ namespace AirNZClone.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F08004E
-			public const int @fixed = 2131230798;
-			
 			// aapt resource value: 0x7F080006
 			public const int action0 = 2131230726;
 			
@@ -6680,6 +6679,9 @@ namespace AirNZClone.Droid
 			
 			// aapt resource value: 0x7F08004C
 			public const int fill_vertical = 2131230796;
+			
+			// aapt resource value: 0x7F08004E
+			public const int @fixed = 2131230798;
 			
 			// aapt resource value: 0x7F08004F
 			public const int flyoutcontent_appbar = 2131230799;
@@ -8465,6 +8467,9 @@ namespace AirNZClone.Droid
 			
 			// aapt resource value: 0x7F0E00C5
 			public const int CardView_Light = 2131624133;
+			
+			// aapt resource value: 0x7F0E0202
+			public const int collectionViewStyle = 2131624450;
 			
 			// aapt resource value: 0x7F0E00C6
 			public const int MainTheme = 2131624134;

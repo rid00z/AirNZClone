@@ -3,18 +3,33 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AirNZClone"
-    x:Class="AirNZClone.MyTrips">
+    x:Class="AirNZClone.MyTrips"
+    xmlns:mr="clr-namespace:MR.Gestures;assembly=MR.Gestures"
+    >
     <ContentPage.Content>
-        <ScrollView>
-            <Grid>
-                <Grid.GestureRecognizers>
-                    <PanGestureRecognizer x:Name="pan"
-                                          PanUpdated="PanUpdated" />
-                </Grid.GestureRecognizers>
-                <local:Trip x:Name="view1" />
-                <local:Trip x:Name="view2" />
-                <local:Trip x:Name="view3" />
-            </Grid>
+
+        <ScrollView x:Name="scrollingContainer">
+            <mr:Grid
+                Panning="PanUpdatedMR"
+                Panned="PanCompleted"
+                >
+
+                <StackLayout x:Name="view3Image" Opacity="1" > 
+                    <Image HeightRequest="300" Aspect="AspectFill" x:Name="bgImage3" ></Image>
+                </StackLayout>
+                <StackLayout x:Name="view2Image" Opacity="1" >
+                    <Image HeightRequest="300" Aspect="AspectFill" x:Name="bgImage2" ></Image>
+                </StackLayout>
+                <StackLayout x:Name="view0Image" Opacity="1" >
+                    <Image HeightRequest="300" Aspect="AspectFill" x:Name="bgImage0" ></Image>
+                </StackLayout>
+                <ContentView x:Name="whiteoverlay" BackgroundColor="White" Opacity=".5" />
+
+                <local:Trip x:Name="view1" BackgroundColor="Transparent" />
+                <local:Trip x:Name="view2" BackgroundColor="Transparent" />
+                <local:Trip x:Name="view3" BackgroundColor="Transparent" />
+            </mr:Grid>
         </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

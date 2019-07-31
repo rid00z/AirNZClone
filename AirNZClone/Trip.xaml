@@ -2,367 +2,174 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="AirNZClone.Trip">
-    <ContentView.Content>
-        <StackLayout>
-            <ContentView HeightRequest="400">
-                <Image WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center" Source="{Binding CityImage}" />
-            </ContentView>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="NZ29" ></Label>
-                <StackLayout>
-                    <Label Text="Departs Awesome"></Label>
+    xmlns:circleimge="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"    
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows" 
+    x:Class="AirNZClone.Trip"
+    BackgroundColor="Transparent">
+    <ContentView.Content> 
+        <StackLayout rainbows:DebugRainbow.IsDebug="false" Spacing="0" BackgroundColor="Transparent">
+            <Grid HeightRequest="300" BackgroundColor="Transparent" >
+                <ContentView Padding="20" BackgroundColor="Transparent" >
+                    <Grid
+                        x:Name="circleImageContainer"
+                        WidthRequest="200" HeightRequest="200"
+                        VerticalOptions="Start" HorizontalOptions="Center">
+                        <circleimge:CircleImage
+                            WidthRequest="200" HeightRequest="200"
+                            Aspect="AspectFill"                            
+                            Source="{Binding CityImage}" />
+                        <circleimge:CircleImage Source="wifiblack.png"
+                               TranslationX="170"
+                               TranslationY="20"
+                               WidthRequest="30"                               
+                               HeightRequest="30" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Start"
+                           x:Name="wifiblack"
+                           />
+                        <circleimge:CircleImage
+                            WidthRequest="200" HeightRequest="200"
+                            Aspect="AspectFill"                            
+                            Source="greenoverlay.png" />
+                        <Label Margin="16" Text="Boarding" VerticalTextAlignment="End" HorizontalTextAlignment="Center" />
+                    </Grid>  
+                </ContentView>
+                <StackLayout Padding="18" BackgroundColor="Transparent"  >
+                    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    <Label HorizontalTextAlignment="Center" Text="Fri 12 Jul" />
+                    <Label HorizontalTextAlignment="Center"
+                           Text="Housten Intercontinenal to Auckland"
+                           FontSize="20"/>
+                </StackLayout>
+            </Grid>
+            <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="NZ29" HorizontalOptions="FillAndExpand"></Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Departs" FontSize="Small" TextColor="Gray"></Label>
                     <Label Text="9:20pm"></Label>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="Arrives"></Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Arrives" FontSize="Small" TextColor="Gray" ></Label>
                     <Label Text="9:20pm"></Label>
                 </StackLayout>
             </StackLayout>
-            <Button Text="View boarding pass" />
-            <Button Text="Checked in" />
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
+            <BoxView Margin="10" BackgroundColor="Gray" HeightRequest=".5" HorizontalOptions="FillAndExpand" ></BoxView>
+            <Button Text="View boarding pass" BackgroundColor="Black"
+                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                    CornerRadius="1"
+                    Margin="10"
+                    TextColor="White"/>
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label Text="Checked in" VerticalOptions="Center" TextColor="Green" />
+                <Image Source="greentick.png" WidthRequest="25" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <BoxView Margin="10" BackgroundColor="Gray" HeightRequest=".5" HorizontalOptions="FillAndExpand" ></BoxView>
+            <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Estimated Boarding" FontSize="Small" TextColor="Gray" ></Label>
                     <Label Text="Boarding now"></Label>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Terminal" FontSize="Small" TextColor="Gray" ></Label>
                     <Label Text="D"></Label>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Gate" FontSize="Small" TextColor="Gray" ></Label>
                     <Label Text="-"></Label>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Seat" FontSize="Small" TextColor="Gray" ></Label>
                     <Label Text="03B"></Label>
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image Source="managebooking.png" HeightRequest="20" ></Image>
+                <Label Text="Manage booking" FontSize="Small" VerticalOptions="Center" ></Label>
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image Source="addcalendar.png" HeightRequest="20" ></Image>
+                <Label Text="Add to calendar" FontSize="Small" VerticalOptions="Center" ></Label>
+                <BoxView HorizontalOptions="FillAndExpand" />
+            </StackLayout> 
+            <BoxView Margin="10" BackgroundColor="Gray" HeightRequest=".5" HorizontalOptions="FillAndExpand" ></BoxView>
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Image Source="wifi" HeightRequest="15" />
+                <Label Text="Wii-Fi on board" VerticalTextAlignment="Center" ></Label>
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label Text=".."></Label>
+                <Label Text="Learn more"></Label>
             </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Booking reference" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="APEVFH" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Booking type" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="Economy" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Bags" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="2 Checked" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Meal" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="Regular" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Flight duration" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="14h 45m" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Aircraft" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="BOEING 777-200" /> 
+            </StackLayout>
+            <StackLayout Padding="10, 3" Orientation="Horizontal" BackgroundColor="#FHFHFH">
+                <Label  VerticalTextAlignment="Center" Text="Operating by" FontSize="Small" TextColor="Gray"/>
+                <BoxView HorizontalOptions="FillAndExpand"/>
+                <Label VerticalTextAlignment="Center" Text="Air New Zealand" /> 
+            </StackLayout>
+            <Label HeightRequest="20" BackgroundColor="#FHFHFH" Text="Share this flight" HorizontalTextAlignment="Center" TextColor="Blue" />
+            <Label Margin="10, 15" Text="Auckland weather" TextColor="Black" FontSize="18"/>
+            <Label Text="Sat 13 Jul" TextColor="White" />
             <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
+                <Label Text="17" FontSize="50" />
+                <Label Text="12" />
+                <BoxView HorizontalOptions="FillAndExpand" />
             </StackLayout>
+            <Label Text="Fine, apart from islated evening showers. Northwest breezes." />
             <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label WidthRequest="25" Text="Sat"  />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label WidthRequest="25" Text="Sun" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label WidthRequest="25" Text="Mon" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label WidthRequest="25" Text="Tue" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Label WidthRequest="25" Text="Wed" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+            </StackLayout>  
             <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image WidthRequest="25" Source="sunny" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image WidthRequest="25" Source="sunny" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image WidthRequest="25" Source="sunny" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image WidthRequest="25" Source="sunny" />
+                <BoxView HorizontalOptions="FillAndExpand" />
+                <Image WidthRequest="25" Source="sunny" />
+                <BoxView HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout>
-                    <Label Text="Estimated Boarding"></Label>
-                    <Label Text="Boarding now"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Terminal"></Label>
-                    <Label Text="D"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Gate"></Label>
-                    <Label Text="-"></Label>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Seat"></Label>
-                    <Label Text="03B"></Label>
-                </StackLayout>
-            </StackLayout>
+            
         </StackLayout>
     </ContentView.Content>
 </ContentView>

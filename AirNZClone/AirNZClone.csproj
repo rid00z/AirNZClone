@@ -19,6 +19,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.659" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.944-nightly" />
+    <PackageReference Include="MR.Gestures" Version="2.1.0" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.0.7" />
   </ItemGroup>
 </Project>

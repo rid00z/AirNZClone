@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.4.2.0.659\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.2.0.659\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.944-nightly\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.944-nightly\build\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -125,16 +125,25 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.4.2.0.659\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.944-nightly\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.4.2.0.659\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.944-nightly\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.4.2.0.659\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.944-nightly\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.4.2.0.659\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.944-nightly\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="MR.Gestures">
+      <HintPath>..\packages\MR.Gestures.2.1.0\lib\Xamarin.iOS10\MR.Gestures.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.3.0.0.5\lib\xamarinios10\ImageCircle.Forms.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.DebugRainbows">
+      <HintPath>..\packages\Xamarin.Forms.DebugRainbows.1.0.7\lib\xamarinios10\Xamarin.Forms.DebugRainbows.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -148,6 +157,14 @@
     <BundleResource Include="Resources\sydney.jpg" />
     <BundleResource Include="Resources\auckland.jpg" />
     <BundleResource Include="Resources\housten.jpeg" />
+    <BundleResource Include="Resources\wifiblack.png" />
+    <BundleResource Include="Resources\wifi.png" />
+    <BundleResource Include="Resources\addcalendar.png" />
+    <BundleResource Include="Resources\managebooking.png" />
+    <BundleResource Include="Resources\cloudy.png" />
+    <BundleResource Include="Resources\sunny.png" />
+    <BundleResource Include="Resources\greenoverlay.png" />
+    <BundleResource Include="Resources\greentick.png" />
   </ItemGroup>
-  <Import Project="..\packages\Xamarin.Forms.4.2.0.659\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.2.0.659\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.944-nightly\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.944-nightly\build\Xamarin.Forms.targets')" />
 </Project>
